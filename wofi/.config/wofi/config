@@ -1,0 +1,9 @@
+show=drun
+prompt=  Launch
+width=600
+height=400
+location=center
+allow_images=true
+image_size=32
+term=kitty
+layer=overlay
