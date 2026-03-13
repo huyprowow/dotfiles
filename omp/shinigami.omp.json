@@ -1,0 +1,194 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "console_title": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+
+      "segments": [
+        {
+          "type": "exit",
+          "style": "diamond",
+          "leading_diamond": "(づ￣ ³￣)づ(≧ ◡ ≦)♡\ue0b6",
+          "foreground": "#ffffff",
+          "background": "#f78fb3",
+
+          "background_templates": ["{{ if gt .Code 0 }}#ffffff{{ end }}"],
+          "foreground_templates": ["{{ if gt .Code 0 }}#000000{{ end }}"],
+
+          "properties": {
+            "template": "\uF7d4",
+            "always_enabled": true
+          }
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+
+          "foreground": "#000000",
+          "background": "#86BBD8",
+          "properties": {
+            "template": "huy"
+          }
+        },
+        {
+          "type": "root",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+
+          "foreground": "#FFD700",
+          "background": "#86BBD8",
+          "properties": {
+            "postfix": "",
+            "root_icon": "⚡"
+          }
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+
+          "foreground": "#ffffff",
+          "background": "#000000",
+          "properties": {
+            "always_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "#000000",
+          "foreground": "#3C873A",
+          "leading_diamond": " \ue0b3 ",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": " <#cc3a3a>\ue5fa</> ",
+            "yarn_icon": " <#348cba>\uf61a</>"
+          },
+          "style": "diamond",
+          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "trailing_diamond": " \ue0b1 ",
+          "type": "node"
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#000000",
+          "properties": {
+            "prefix": "\uf43a "
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "leading_diamond": "╚»\ue0b6",
+          "foreground": "#000000",
+          "background": "#ffffff",
+          "properties": {
+            "alpine": "\uf300",
+            "arch": "\uf303",
+            "centos": "\uf304",
+            "debian": "\uf306",
+            "elementary": "\uf309",
+            "fedora": "\uf30a",
+            "gentoo": "\uf30d",
+            "linux": "\ue712",
+            "macos": "\ue711",
+            "manjaro": "\uf312",
+            "mint": "\uf30f",
+            "opensuse": "\uf314",
+            "raspbian": "\uf315",
+            "ubuntu": "\uf31c",
+            "wsl": "\ue712",
+            "wsl_separator": " on ",
+            "windows": "\ue70f",
+            "postfix": "<#000000> \ue0b1</>"
+          }
+        },
+
+        {
+          "type": "root",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b0",
+          "foreground": "#000000",
+          "background": "#ffffff",
+          "properties": {
+            "root_icon": "\uF0E7",
+            "postfix": "<#ffffff> \ue0b1</>"
+          }
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "foreground": "#000000",
+          "background": "#ffffff",
+          "properties": {
+            "prefix": "<#000000> \ue5ff </>",
+            "style": "agnoster_short",
+            "enable_hyperlink": true,
+            "home_icon": "\uF7DB ",
+            "folder_icon": "<#000000>\ue5fe </>",
+            "folder_separator_icon": "<#000000>\uE0B1 </>"
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#ffffff",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#000000{{ end }}",
+            "{{ if gt .Ahead 0 }}#6DFEDF{{ end }}",
+            "{{ if gt .Behind 0 }}#AE81FF{{ end }}"
+          ],
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true,
+            "fetch_status": true,
+            "prefix": "\ue0b1 ",
+            "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if .Staging.Changed }}<#34EB6B> \uF046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}<#E84855> \uF044 {{ .Working.String }}</>{{ end }}"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "root",
+          "style": "plain",
+          "properties": {}
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#000000",
+          "properties": {
+            "prefix": "",
+            "postfix": "",
+            "text": "<#1a1af5>\u276F</>"
+          }
+        }
+      ]
+    }
+  ]
+}
