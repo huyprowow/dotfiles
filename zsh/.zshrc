@@ -115,7 +115,4 @@ export VCPKG_ROOT=$HOME/.local/share/vcpkg
 export PATH=$PATH:$VCPKG_ROOT
 fastfetch
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
+eval "$(oh-my-posh init zsh --config ~/.config/omp/shinigami.omp.json)"
